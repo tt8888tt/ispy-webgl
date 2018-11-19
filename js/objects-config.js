@@ -11,18 +11,31 @@ ispy.detector_description = {
     fn: ispy.makeRPC, style: {color: "rgb(60%, 80%, 0%)", opacity: 0.5, linewidth: 0.5}},
   "RPCBarrel3D_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Resistive Plate Chambers (barrel)",
     fn: ispy.makeRPC, style: {color: "rgb(60%, 80%, 0%)", opacity: 0.5, linewidth: 0.5}},
+  "RPCRPhi_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Resistive Plate Chambers RPhi",
+    fn: ispy.makeRPC, style: {color: "rgb(60%, 80%, 0%)", opacity: 0.5, linewidth: 0.5}},
+  "RPCRZ_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Resistive Plate Chambers RZ",
+    fn: ispy.makeRPC, style: {color: "rgb(60%, 80%, 0%)", opacity: 0.5, linewidth: 0.5}},
 
-  "CSC3D_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Cathode Strip Chambers",
+  "CSCMinus3D_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Cathode Strip Chambers (-)",
     fn: ispy.makeCSC, style: {color: "rgb(60%, 70%, 10%)", opacity: 0.5, linewidth: 0.5}},
-  "CSCRZ_V1": {type: ispy.BOX, on: true, group: "Detector", name: "Cathode Strip Chambers RZ",
+  "CSCPlus3D_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Cathode Strip Chambers (+)",
+    fn: ispy.makeCSC, style: {color: "rgb(60%, 70%, 10%)", opacity: 0.5, linewidth: 0.5}},
+  "CSCRZ_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Cathode Strip Chambers RZ",
     fn: ispy.makeCSC, style: {color: "rgb(60%, 70%, 10%)", opacity: 0.5, linewidth: 0.5}},
 
-  "DTs3D_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Drift Tubes",
+  "DTs3D_V1": {type: ispy.BOX, on: true, group: "Detector", name: "Drift Tubes",
     fn: ispy.makeDT, style: {color: "rgb(80%, 40%, 0%)", opacity: 0.5, linewidth: 0.5}},
-  "DTsRPhi_V1": {type: ispy.BOX, on: true, group: "Detector", name: "Drift Tubes RPhi",
+  "DTsRPhi_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Drift Tubes RPhi",
     fn: ispy.makeDT, style: {color: "rgb(80%, 40%, 0%)", opacity: 0.5, linewidth: 0.5}},
-  "DTsRZ_V1": {type: ispy.BOX, on: true, group: "Detector", name: "Drift Tubes RZ",
+  "DTsRZ_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Drift Tubes RZ",
     fn: ispy.makeDT, style: {color: "rgb(80%, 40%, 0%)", opacity: 0.5, linewidth: 0.5}},
+
+  "GEMMinus3D_V1": {type: ispy.BOX, on: true, group: "Detector", name: "Gas Electron Multiplier (-)",
+    fn: ispy.makeGEM, style: {color: "rgb(0%, 0%, 100%)", opacity: 0.5, linewidth: 0.5}},
+  "GEMPlus3D_V1": {type: ispy.BOX, on: true, group: "Detector", name: "Gas Electron Multiplier (+)",
+    fn: ispy.makeGEM, style: {color: "rgb(0%, 0%, 100%)", opacity: 0.5, linewidth: 0.5}},
+  "GEMRZ_V1": {type: ispy.BOX, on: false, group: "Detector", name: "Gas Electron Multiplier RZ",
+    fn: ispy.makeGEM, style: {color: "rgb(0%, 0%, 100%)", opacity: 0.5, linewidth: 0.5}},
 
   "HcalForwardMinus3D_MODEL": {type: ispy.MODEL, on: false, group: "Detector", name: "HCAL Forward (-)",
     fn: ispy.makeModelHcalForwardMinus, style: {color: "rgb(70%, 70%, 0%)", opacity: 0.5, linewidth: 0.5}},
@@ -219,10 +232,10 @@ ispy.event_description = {
   "CSCCorrelatedLCTDigis_V2": {type: ispy.LINE, on: false, group: "Muon", name: "CSC Correlated LCT Digis",
     fn: ispy.makeCSCLCTCorrelatedLCTDigis, style: {color: "rgb(0%,100%,100%)", opacity:0.8, linewidth: 2}},
 
-  /* this only exists in my test file
-   "MatchingCSCs_V1": {type: ispy.BOX, on: true, group: "Muon", name: "Matching CSCs",
-   fn: ispy.makeMuonChamber, style: {color: [1, 0, 0], opacity: 0.3, linewidth: 2}},
-   */
+  "GEMRecHits_V2": {type: ispy.LINE, on: true, group: "Muon", name: "GEM Rec. Hits",
+    fn: ispy.makeGEMRecHits_V2, style: {color: "rgb(60%, 100%, 90%)", opacity: 1.0, linewidth: 1}},
+  "GEMSegments_V2": {type: ispy.LINE, on: true, group: "Muon", name: "GEM Segments",
+    fn: ispy.makeGEMSegments, style: {color: "rgb(100%, 60%, 100%)", opacity: 1.0, linewidth: 1.5}},
 
   "CSCRecHit2Ds_V2": {type: ispy.LINE, on: true, group: "Muon", name: "CSC Rec. Hits (2D)",
     fn: ispy.makeCSCRecHit2Ds_V2, style: {color: "rgb(60%, 100%, 90%)", opacity: 1.0, linewidth: 1}},

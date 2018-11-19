@@ -943,6 +943,11 @@ ispy.makeDT = function(dt) {
   return ispy.makeWireframeBox(dt, 1);
 };
 
+ispy.makeGEM = function(gem) {
+  //return ispy.makeSolidBox(gem, 1);
+  return ispy.makeWireframeBox(gem, 1);
+};
+
 ispy.makeCSC = function(csc) {
   //return ispy.makeSolidBox(csc, 1);
   return ispy.makeWireframeBox(csc, 1);
@@ -1186,6 +1191,10 @@ ispy.makeRPCRecHits = function(data) {
   return [u,v,w];
 };
 
+ispy.makeGEMRecHits_V2 = function(data, descr) {
+  return ispy.makeRPCRecHits(data, descr);
+};
+
 ispy.makeCSCRecHit2Ds_V2 = function(data, descr) {
   return ispy.makeRPCRecHits(data, descr);
 };
@@ -1195,6 +1204,10 @@ ispy.makeDTRecSegments = function(data) {
   geometry.vertices.push(new THREE.Vector3(data[1][0], data[1][1], data[1][2]));
   geometry.vertices.push(new THREE.Vector3(data[2][0], data[2][1], data[2][2]));
   return [geometry];
+};
+
+ispy.makeGEMSegments = function(data, geometry) {
+  return ispy.makeDTRecSegments(data, geometry);
 };
 
 ispy.makeCSCSegments = function(data, geometry) {
